@@ -1,23 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import CardComponent from './Components/CardComponent';
 
 function App() {
+
+  const [cards, setCards] = useState([]);
+
+  const key = "?rapidapi-key=cf03b0fc39msh9fdf8987cbde73ap1bdefcjsnaea11d1a093c"
+
+  const URL = 'https://omgvamp-hearthstone-v1.p.rapidapi.com/info/'+ key;
+
+  useEffect(() =>{
+    fetch(URL)
+    .then(response => response.json())
+    .then(data => setCards(data.patch))
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>Hearthstone patch: {cards}</div>
+
+        <CardComponent/>
       </header>
     </div>
   );

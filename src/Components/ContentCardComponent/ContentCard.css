@@ -1,0 +1,14 @@
+.ContentCardContainer {
+    max-width: 310px;
+    margin: auto;
+}
+
+.ContentCardImage {
+    height: 300px !important;
+    width: 310px;
+}
+
+.ContentCardDescription {
+    height: 100px;
+    overflow-wrap: break-word;
+}

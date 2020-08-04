@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Grid, TextField, Button } from "@material-ui/core";
-import { IUserInput } from "../Common/IUserInput";
+import { IUserInput } from "../../Common/IUserInput";
 
 interface ISearchBarProps {
     SetUserInput: (a: IUserInput) => void;

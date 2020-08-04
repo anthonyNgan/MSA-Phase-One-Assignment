@@ -15,4 +15,5 @@ export interface IContentCardProps {
     ImageUrl: string | null;
     Description: string | null;
     cardsData: Array<any> | [] | null;
+    flavor: string | null;
 }

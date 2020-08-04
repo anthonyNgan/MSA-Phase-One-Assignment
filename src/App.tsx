@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import SearchBar from './Components/SearchBar';
-import ContentGrid from './Components/ContentGrid';
+import SearchBar from './Components/SearchBarComponent/SearchBar';
+import ContentGrid from './Components/ContentGridComponent/ContentGrid';
 import { IUserInput } from './Common/IUserInput';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <div>
-                    Hearthstone patch:{" "}
+                    Hearthstone Cards:{" "}
                     {patch.map((patch) => (
                         <div>{patch.cardID}</div>
                     ))}{" "}

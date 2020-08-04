@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Grid, TextField, Button } from '@material-ui/core';
-import { IUserInput } from '../Common/IUserInput';
+import React, { useState } from "react";
+import { Grid, TextField, Button } from "@material-ui/core";
+import { IUserInput } from "../Common/IUserInput";
 
 interface ISearchBarProps {
     SetUserInput: (a: IUserInput) => void;
@@ -10,21 +10,33 @@ function SearchBar(props: ISearchBarProps) {
     const [SearchValue, setSearch] = useState<string | null>("");
     const handleSearch = (s: string | null) => {
         setSearch(s);
-    }
+    };
     const [hasFocus, setHasFocus] = useState<boolean>(false);
 
     const handleSubmit = () => {
         console.log(SearchValue);
 
-        if (SearchValue?.length !== 0 && SearchValue !== null && SearchValue !== "") {
+        if (
+            SearchValue?.length !== 0 &&
+            SearchValue !== null &&
+            SearchValue !== ""
+        ) {
             let UserInput: IUserInput = {
-                SearchValue: SearchValue
-            }
-            props.SetUserInput(UserInput)
+                SearchValue: SearchValue,
+                cardId: "",
+                dbfId: 0,
+                name: "",
+                cardSet: "",
+                type: "",
+                text: "",
+                playerClass: "",
+                locale: "",
+            };
+            props.SetUserInput(UserInput);
         } else {
             setHasFocus(true);
         }
-    }
+    };
 
     return (
         <div>
@@ -38,15 +50,15 @@ function SearchBar(props: ISearchBarProps) {
                         error={hasFocus && SearchValue === ""}
                         onClick={() => setHasFocus(true)}
                         value={SearchValue}
-                        onChange={e => handleSearch(e.target.value)}
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                 </Grid>
                 <Button variant="contained" color="secondary" onClick={handleSubmit}>
                     Submit
-            </Button>
+        </Button>
             </Grid>
         </div>
-    )
+    );
 }
 
 export default SearchBar;

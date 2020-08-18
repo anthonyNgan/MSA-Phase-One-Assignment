@@ -25,7 +25,6 @@ function ContentCard(props: IContentCardProps) {
                         <Typography variant="body2" color="textSecondary" component="p">
                             {props.Name}
                         </Typography>
-                        
                     </CardContent>
                     <CardContent>
                         <Typography variant="body2" color="textSecondary" component="p">

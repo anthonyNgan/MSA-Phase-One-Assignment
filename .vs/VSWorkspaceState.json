@@ -3,9 +3,8 @@
     "",
     "\\public",
     "\\src",
-    "\\src\\Common",
     "\\src\\Components"
   ],
-  "SelectedNode": "\\src\\Common\\IUserInput.ts",
+  "SelectedNode": "\\src\\Components\\ContentCardComponent",
   "PreviewInSolutionExplorer": false
 }

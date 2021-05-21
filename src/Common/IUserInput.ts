@@ -8,6 +8,7 @@ export interface IUserInput {
     text: any;
     playerClass: string;
     locale: string;
+    mechanics: any;
 }
 
 export interface IContentCardProps {

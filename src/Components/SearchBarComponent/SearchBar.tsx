@@ -31,6 +31,7 @@ function SearchBar(props: ISearchBarProps) {
                 text: "",
                 playerClass: "",
                 locale: "",
+                mechanics: "",
             };
             props.SetUserInput(UserInput);
         } else {

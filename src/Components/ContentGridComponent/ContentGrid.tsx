@@ -17,7 +17,7 @@ function ContentGrid(props: IContentGridProps) {
         console.log(el);
         Cards.push(
             <Grid key={"card_" + i} item sm={6} md={4} lg={3} className="ContentGridCard">
-                <ContentCard ImageUrl={el["imgGold"]} Name={el["name"]} Flavor={el["flavor"]} />
+                <ContentCard ImageUrl={"https://art.hearthstonejson.com/v1/512x/" + el["id"] + ".jpg"} Name={el["name"]} Flavor={el["flavor"]} />
             </Grid>
         )
     });

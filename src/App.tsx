@@ -15,19 +15,18 @@ function App() {
         text: "",
         playerClass: "",
         locale: "",
+        mechanics: ""
     });
     function SetUserInput(a: IUserInput) {
         setUserInput(a);
     }
     const [patch, setpatch] = useState([{ cardID: "", dbfId: 0, name: "" }]);
-    const key =
-        "?rapidapi-key=cf03b0fc39msh9fdf8987cbde73ap1bdefcjsnaea11d1a093c";
-    const URL = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/" + key;
+    const URL = "https://api.hearthstonejson.com/v1/25770/enUS/cards.collectible.json"
 
     useEffect(() => {
         fetch(URL)
             .then((response) => response.json())
-            .then((data) => setpatch(data.Basic));
+            .then((data) => setpatch(data));
     }, []);
     console.log(patch);
 
